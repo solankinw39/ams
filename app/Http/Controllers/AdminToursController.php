@@ -52,7 +52,7 @@
 			$this->form[] = ['label'=>'End Date','name'=>'end_date','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Description','name'=>'description','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Is Half Day','name'=>'is_half_day','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Yes;No'];
-			$this->form[] = ['label'=>'First/Second Half Day','name'=>'fisrt_second_half_day','type'=>'radio','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'1|First Half;2|Second Half'];
+			$this->form[] = ['label'=>'First/Second Half Day','name'=>'first_second_half_day','type'=>'radio','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'1|First Half;2|Second Half'];
 			$this->form[] = ['label'=>'Approved By','name'=>'approved_by','type'=>'number','validation'=>'integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Approvar Remark','name'=>'approvar_remark','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Document','name'=>'document','type'=>'upload','validation'=>'min:1|max:255','width'=>'col-sm-10'];
@@ -70,8 +70,8 @@
 			//$this->form[] = ['label'=>'Start Date','name'=>'start_date','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'End Date','name'=>'end_date','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Description','name'=>'description','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Is Half Day','name'=>'is_half_day','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Array'];
-			//$this->form[] = ['label'=>'Fisrt Second Half Day','name'=>'fisrt_second_half_day','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Is Half Day','name'=>'is_half_day','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Yes;No'];
+			//$this->form[] = ['label'=>'First/Second Half Day','name'=>'fisrt_second_half_day','type'=>'radio','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'1|First Half;2|Second Half'];
 			//$this->form[] = ['label'=>'Approved By','name'=>'approved_by','type'=>'number','validation'=>'integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Approvar Remark','name'=>'approvar_remark','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Document','name'=>'document','type'=>'upload','validation'=>'min:1|max:255','width'=>'col-sm-10'];
