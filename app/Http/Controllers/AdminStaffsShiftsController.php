@@ -46,23 +46,19 @@
 			$this->form[] = ['label'=>'Sub Divisions','name'=>'sub_divisions_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'sub_divisions,name'];
 			$this->form[] = ['label'=>'Staffs','name'=>'staffs_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'staffs,title'];
 			$this->form[] = ['label'=>'Shifts Ids','name'=>'shifts_ids','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Is Rotational','name'=>'is_rotational','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Array'];
+			$this->form[] = ['label'=>'Is Rotational','name'=>'is_rotational','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Yes;No'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Organizations Id","name"=>"organizations_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"organizations,name"];
-			//$this->form[] = ["label"=>"Locations Id","name"=>"locations_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"locations,name"];
-			//$this->form[] = ["label"=>"Departments Id","name"=>"departments_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"departments,name"];
-			//$this->form[] = ["label"=>"Divisions Id","name"=>"divisions_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"divisions,name"];
-			//$this->form[] = ["label"=>"Sub Divisions Id","name"=>"sub_divisions_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"sub_divisions,name"];
-			//$this->form[] = ["label"=>"Staffs Id","name"=>"staffs_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"staffs,title"];
-			//$this->form[] = ["label"=>"Shifts Ids","name"=>"shifts_ids","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Is Rotational","name"=>"is_rotational","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
-			//$this->form[] = ["label"=>"Created By","name"=>"created_by","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Created On","name"=>"created_on","type"=>"datetime","required"=>TRUE,"validation"=>"required|date_format:Y-m-d H:i:s"];
-			//$this->form[] = ["label"=>"Updated By","name"=>"updated_by","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Updated On","name"=>"updated_on","type"=>"datetime","required"=>TRUE,"validation"=>"required|date_format:Y-m-d H:i:s"];
+			//$this->form[] = ['label'=>'Organizations','name'=>'organizations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'organizations,name'];
+			//$this->form[] = ['label'=>'Locations','name'=>'locations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'locations,name'];
+			//$this->form[] = ['label'=>'Departments','name'=>'departments_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'departments,name'];
+			//$this->form[] = ['label'=>'Divisions','name'=>'divisions_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'divisions,name'];
+			//$this->form[] = ['label'=>'Sub Divisions','name'=>'sub_divisions_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'sub_divisions,name'];
+			//$this->form[] = ['label'=>'Staffs','name'=>'staffs_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'staffs,title'];
+			//$this->form[] = ['label'=>'Shifts Ids','name'=>'shifts_ids','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Is Rotational','name'=>'is_rotational','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Array'];
 			# OLD END FORM
 
 			/* 

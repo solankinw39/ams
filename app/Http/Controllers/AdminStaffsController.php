@@ -53,20 +53,20 @@
 			$this->form[] = ['label'=>'Gender','name'=>'gender','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'M;F;N/A'];
 			$this->form[] = ['label'=>'Date Of Birth','name'=>'date_of_birth','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Email Address','name'=>'email_address','type'=>'email','validation'=>'required|min:1|max:255|email|unique:staffs','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Is Active','name'=>'is_active','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Is Active','name'=>'is_active','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Yes;No'];
 			$this->form[] = ['label'=>'Joining Date','name'=>'joining_date','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Is Holding Card','name'=>'is_holding_card','type'=>'radio','validation'=>'integer','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Is Holding Card','name'=>'is_holding_card','type'=>'radio','validation'=>'integer','width'=>'col-sm-10','dataenum'=>'Yes;No'];
 			$this->form[] = ['label'=>'Card Number','name'=>'card_number','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Photo','name'=>'photo','type'=>'upload','validation'=>'image|max:3000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Introduction','name'=>'introduction','type'=>'textarea','validation'=>'string|min:5|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Is Auto Shift','name'=>'is_auto_shift','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Is Auto Shift','name'=>'is_auto_shift','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Yes;No'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
 			//$this->form[] = ['label'=>'Organizations','name'=>'organizations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'organizations,name'];
-			//$this->form[] = ['label'=>'Locations','name'=>'locations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'locations,name'];
-			//$this->form[] = ['label'=>'Departments','name'=>'departments_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'departments,name'];
+			//$this->form[] = ['label'=>'Locations','name'=>'locations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'locations,name','parent_select'=>'organizations_id'];
+			//$this->form[] = ['label'=>'Departments','name'=>'departments_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'departments,name','parent_select'=>'locations_id'];
 			//$this->form[] = ['label'=>'Divisions','name'=>'divisions_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'divisions,name'];
 			//$this->form[] = ['label'=>'Sub Divisions','name'=>'sub_divisions_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'sub_divisions,name'];
 			//$this->form[] = ['label'=>'Title','name'=>'title','type'=>'text','validation'=>'string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
@@ -74,7 +74,7 @@
 			//$this->form[] = ['label'=>'Last Name','name'=>'last_name','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Middle Name','name'=>'middle_name','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Designation','name'=>'designation_id','type'=>'select2','validation'=>'required','width'=>'col-sm-9'];
-			//$this->form[] = ['label'=>'Gender','name'=>'gender','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'M:F:N/A'];
+			//$this->form[] = ['label'=>'Gender','name'=>'gender','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'M;F;N/A'];
 			//$this->form[] = ['label'=>'Date Of Birth','name'=>'date_of_birth','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Email Address','name'=>'email_address','type'=>'email','validation'=>'required|min:1|max:255|email|unique:staffs','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Is Active','name'=>'is_active','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10'];

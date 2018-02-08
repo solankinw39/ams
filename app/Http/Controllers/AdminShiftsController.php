@@ -48,21 +48,21 @@
 			$this->form[] = ['label'=>'Start Time','name'=>'start_time','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'End Time','name'=>'end_time','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Working Hours','name'=>'working_hours','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Is Late Allowed','name'=>'is_late_allowed','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Array'];
+			$this->form[] = ['label'=>'Is Late Allowed','name'=>'is_late_allowed','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Yes;No'];
 			$this->form[] = ['label'=>'Description','name'=>'description','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Is Active','name'=>'is_active','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Array'];
-			$this->form[] = ['label'=>'Is Night Shift','name'=>'is_night_shift','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Array'];
-			$this->form[] = ['label'=>'Is Weekoff','name'=>'is_weekoff','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Array'];
+			$this->form[] = ['label'=>'Is Active','name'=>'is_active','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Yes;No'];
+			$this->form[] = ['label'=>'Is Night Shift','name'=>'is_night_shift','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Yes;No'];
+			$this->form[] = ['label'=>'Is Weekoff','name'=>'is_weekoff','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Yes;No'];
 			$this->form[] = ['label'=>'Weekoff Type','name'=>'weekoff_type','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Weekoff Days','name'=>'weekoff_days','type'=>'number','validation'=>'integer|min:0|required','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Organizations','name'=>'organizations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
-			//$this->form[] = ['label'=>'Locations','name'=>'locations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'organizations,name'];
-			//$this->form[] = ['label'=>'Shift Types','name'=>'shift_types_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'locations,name'];
-			//$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','datatable'=>'shift_types,name'];
+			//$this->form[] = ['label'=>'Organizations','name'=>'organizations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'organizations,name'];
+			//$this->form[] = ['label'=>'Locations','name'=>'locations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'locations,name'];
+			//$this->form[] = ['label'=>'Shift Types','name'=>'shift_types_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'shift_types,name'];
+			//$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Start Time','name'=>'start_time','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'End Time','name'=>'end_time','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Working Hours','name'=>'working_hours','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];

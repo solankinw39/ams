@@ -5,27 +5,27 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminLeavesController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminMonthlyPerformanceController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
 			$this->title_field = "id";
 			$this->limit = "20";
-			$this->orderby = "id,desc";
+			$this->orderby = "staffs_id,desc";
 			$this->global_privilege = false;
-			$this->button_table_action = true;
-			$this->button_bulk_action = true;
+			$this->button_table_action = false;
+			$this->button_bulk_action = false;
 			$this->button_action_style = "button_icon";
-			$this->button_add = true;
-			$this->button_edit = true;
-			$this->button_delete = true;
-			$this->button_detail = true;
-			$this->button_show = true;
+			$this->button_add = false;
+			$this->button_edit = false;
+			$this->button_delete = false;
+			$this->button_detail = false;
+			$this->button_show = false;
 			$this->button_filter = true;
 			$this->button_import = false;
-			$this->button_export = false;
-			$this->table = "leaves";
+			$this->button_export = true;
+			$this->table = "attendance_timecard";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
@@ -34,56 +34,60 @@
 			$this->col[] = ["label"=>"Locations","name"=>"locations_id","join"=>"locations,name"];
 			$this->col[] = ["label"=>"Departments","name"=>"departments_id","join"=>"departments,name"];
 			$this->col[] = ["label"=>"Staffs","name"=>"staffs_id","join"=>"staffs,name"];
-			$this->col[] = ["label"=>"Subject","name"=>"subject"];
-			$this->col[] = ["label"=>"Start Date","name"=>"start_date"];
-			$this->col[] = ["label"=>"End Date","name"=>"end_date"];
-			$this->col[] = ["label"=>"Status","name"=>"status"];
+			$this->col[] = ["label"=>"Recorddate","name"=>"recorddate"];
+			$this->col[] = ["label"=>"Present","name"=>"is_present"];
+			$this->col[] = ["label"=>"First Log","name"=>"first_log"];
+			$this->col[] = ["label"=>"Last Log","name"=>"fourth_log"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Organizations','name'=>'organizations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'organizations,name'];
-			$this->form[] = ['label'=>'Locations','name'=>'locations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'locations,name'];
-			$this->form[] = ['label'=>'Departments','name'=>'departments_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'departments,name'];
-			$this->form[] = ['label'=>'Divisions','name'=>'divisions_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'divisions,name'];
-			$this->form[] = ['label'=>'Sub Divisions','name'=>'sub_divisions_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'sub_divisions,name'];
-			$this->form[] = ['label'=>'Staffs','name'=>'staffs_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'staffs,name'];
-			$this->form[] = ['label'=>'Subject','name'=>'subject','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Start Date','name'=>'start_date','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'End Date','name'=>'end_date','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Leave Types','name'=>'leave_types_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'leave_types,name'];
-			$this->form[] = ['label'=>'Duration','name'=>'duration','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Priority','name'=>'priority','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Description','name'=>'description','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Is Half Day','name'=>'is_half_day','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Yes;No'];
-			$this->form[] = ['label'=>'First/Second Half Day','name'=>'fisrt_second_half_day','type'=>'radio','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'1|First Half;2|Second Half'];
-			$this->form[] = ['label'=>'Approved By','name'=>'approved_by','type'=>'number','validation'=>'integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Approvar Remark','name'=>'approvar_remark','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Document','name'=>'document','type'=>'upload','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Organizations','name'=>'organizations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'organizations,name'];
-			//$this->form[] = ['label'=>'Locations','name'=>'locations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'locations,name'];
-			//$this->form[] = ['label'=>'Departments','name'=>'departments_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'departments,name'];
-			//$this->form[] = ['label'=>'Divisions','name'=>'divisions_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'divisions,name'];
-			//$this->form[] = ['label'=>'Sub Divisions','name'=>'sub_divisions_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'sub_divisions,name'];
-			//$this->form[] = ['label'=>'Staffs','name'=>'staffs_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'staffs,name'];
-			//$this->form[] = ['label'=>'Subject','name'=>'subject','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Start Date','name'=>'start_date','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'End Date','name'=>'end_date','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Leave Types','name'=>'leave_types_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'leave_types,name'];
-			//$this->form[] = ['label'=>'Duration','name'=>'duration','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Priority','name'=>'priority','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Description','name'=>'description','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Status','name'=>'status','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Is Half Day','name'=>'is_half_day','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'Array'];
-			//$this->form[] = ['label'=>'Fisrt Second Half Day','name'=>'fisrt_second_half_day','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Approved By','name'=>'approved_by','type'=>'number','validation'=>'integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Approvar Remark','name'=>'approvar_remark','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Document','name'=>'document','type'=>'upload','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ["label"=>"Organizations Id","name"=>"organizations_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"organizations,name"];
+			//$this->form[] = ["label"=>"Locations Id","name"=>"locations_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"locations,name"];
+			//$this->form[] = ["label"=>"Departments Id","name"=>"departments_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"departments,name"];
+			//$this->form[] = ["label"=>"Divisions Id","name"=>"divisions_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"divisions,name"];
+			//$this->form[] = ["label"=>"Sub Divisions Id","name"=>"sub_divisions_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"sub_divisions,name"];
+			//$this->form[] = ["label"=>"Shifts Id","name"=>"shifts_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"shifts,name"];
+			//$this->form[] = ["label"=>"Devices Id","name"=>"devices_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"devices,filename"];
+			//$this->form[] = ["label"=>"Staffs Id","name"=>"staffs_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"staffs,title"];
+			//$this->form[] = ["label"=>"Recorddate","name"=>"recorddate","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+			//$this->form[] = ["label"=>"Logcount","name"=>"logcount","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
+			//$this->form[] = ["label"=>"First Log","name"=>"first_log","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Second Log","name"=>"second_log","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Third Log","name"=>"third_log","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Fourth Log","name"=>"fourth_log","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Fifth Log","name"=>"fifth_log","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Sixth Log","name"=>"sixth_log","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Seventh Log","name"=>"seventh_log","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Eighth Log","name"=>"eighth_log","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Expected In Time","name"=>"expected_in_time","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Expected Out Time","name"=>"expected_out_time","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Expected In Office","name"=>"expected_in_office","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Actual In Office","name"=>"actual_in_office","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Over Time","name"=>"over_time","type"=>"time","required"=>TRUE,"validation"=>"required|date_format:H:i:s"];
+			//$this->form[] = ["label"=>"Is Holiday","name"=>"is_holiday","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+			//$this->form[] = ["label"=>"Is Leave","name"=>"is_leave","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+			//$this->form[] = ["label"=>"Leave Type Id","name"=>"leave_type_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"leave_type,id"];
+			//$this->form[] = ["label"=>"Leave Duration","name"=>"leave_duration","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Is Leave Approved","name"=>"is_leave_approved","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+			//$this->form[] = ["label"=>"Is Leave Unpaapproved","name"=>"is_leave_unpaid_approved","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+			//$this->form[] = ["label"=>"Leave Session","name"=>"leave_session","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Is Absent","name"=>"is_absent","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+			//$this->form[] = ["label"=>"Is Present","name"=>"is_present","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+			//$this->form[] = ["label"=>"Is Weekoff","name"=>"is_weekoff","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+			//$this->form[] = ["label"=>"Is Tour","name"=>"is_tour","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+			//$this->form[] = ["label"=>"Is Wfh","name"=>"is_wfh","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+			//$this->form[] = ["label"=>"Is Compoff","name"=>"is_compoff","type"=>"radio","required"=>TRUE,"validation"=>"required|integer","dataenum"=>"Array"];
+			//$this->form[] = ["label"=>"Cron Status","name"=>"cron_status","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Created By","name"=>"created_by","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
+			//$this->form[] = ["label"=>"Created On","name"=>"created_on","type"=>"datetime","required"=>TRUE,"validation"=>"required|date_format:Y-m-d H:i:s"];
+			//$this->form[] = ["label"=>"Updated By","name"=>"updated_by","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
+			//$this->form[] = ["label"=>"Updated On","name"=>"updated_on","type"=>"datetime","required"=>TRUE,"validation"=>"required|date_format:Y-m-d H:i:s"];
 			# OLD END FORM
 
 			/* 
