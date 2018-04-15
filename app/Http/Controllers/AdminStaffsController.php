@@ -40,9 +40,9 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Organizations','name'=>'organizations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'organizations,name'];
-			$this->form[] = ['label'=>'Locations','name'=>'locations_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'locations,name'];
-			$this->form[] = ['label'=>'Departments','name'=>'departments_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'departments,name'];
+			$this->form[] = ['label'=>'Organizations','name'=>'organizations_id','type'=>'select','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'organizations,name'];
+			$this->form[] = ['label'=>'Locations','name'=>'locations_id','type'=>'select','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'locations,name','parent_select'=>'organizations_id'];
+			$this->form[] = ['label'=>'Departments','name'=>'departments_id','type'=>'select','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'departments,name','parent_select'=>'locations_id'];
 			$this->form[] = ['label'=>'Divisions','name'=>'divisions_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'divisions,name'];
 			$this->form[] = ['label'=>'Sub Divisions','name'=>'sub_divisions_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'sub_divisions,name'];
 			$this->form[] = ['label'=>'Title','name'=>'title','type'=>'text','validation'=>'string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
